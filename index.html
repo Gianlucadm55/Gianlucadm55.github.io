@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Giovanni Luca Di Maio</title>
+    <style>
+        :root { 
+            --primary: #1e3a8a; 
+            --secondary: #3b82f6; 
+            --bg: #f8fafc; 
+            --text: #334155; 
+            --card-bg: #ffffff;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            background-color: var(--bg); 
+            color: var(--text); 
+        }
+        header { 
+            background: var(--primary); 
+            color: white; 
+            text-align: center; 
+            padding: 4rem 1rem 5rem 1rem; 
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.8rem; 
+            font-weight: 700;
+        }
+        header p { 
+            font-size: 1.2rem; 
+            opacity: 0.9; 
+            margin-top: 10px; 
+            font-weight: 300;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: -40px auto 40px; 
+            padding: 0 20px; 
+            position: relative; 
+        }
+        .card { 
+            background: var(--card-bg); 
+            padding: 35px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            margin-bottom: 30px; 
+        }
+        h2 { 
+            color: var(--primary); 
+            border-bottom: 2px solid #e2e8f0; 
+            padding-bottom: 12px; 
+            margin-top: 0; 
+            font-size: 1.8rem;
+        }
+        .btn { 
+            display: inline-block; 
+            background: var(--secondary); 
+            color: white; 
+            padding: 12px 28px; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            transition: background 0.3s ease; 
+        }
+        .btn:hover { 
+            background: #2563eb; 
+        }
+        .btn-github {
+            background: #24292e;
+            padding: 8px 18px;
+            font-size: 0.95em;
+            margin-top: 15px;
+        }
+        .btn-github:hover {
+            background: #000000;
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 25px; 
+        }
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: 1fr 1fr; }
+        }
+        .item h3 { 
+            margin: 0 0 5px 0; 
+            color: var(--primary); 
+            font-size: 1.2rem;
+        }
+        .item p.subtitle { 
+            margin: 0 0 10px 0; 
+            font-style: italic; 
+            color: #64748b; 
+            font-size: 0.95em; 
+        }
+        .item p {
+            margin: 0;
+            color: #475569;
+        }
+        .skills { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+        }
+        .skill-tag { 
+            background: #e0f2fe; 
+            color: #0369a1; 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            font-size: 0.95em; 
+            font-weight: 500; 
+        }
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .contact-info a { 
+            color: var(--secondary); 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        .contact-info a:hover { 
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Foto Profilo -->
+        <img src="foto-profilo.jpg" alt="Giovanni Luca Di Maio" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid white; margin-bottom: 15px;">
+        
+        <h1>Giovanni Luca Di Maio</h1>
+        <p>Sviluppatore Software & Infrastrutture di Rete</p>
+    </header>
+    
+    <div class="container">
+        <!-- Presentazione -->
+        <div class="card" style="text-align: center;">
+            <p style="font-size: 1.15em; max-width: 800px; margin: 0 auto 25px; color: #475569;">
+                Neolaureato in Informatica con un percorso accademico arricchito da esperienze pratiche d'eccellenza presso la Apple Developer Academy e il Cisco DTLab Networking Bootcamp. Ho sviluppato solide competenze trasversali che uniscono lo sviluppo software alle infrastrutture di rete. Spinto da una naturale curiosità e fortemente orientato al continuous learning, desidero inserirmi in un contesto stimolante dove poter affrontare sfide tecnologiche complesse e contribuire attivamente alla crescita del team con entusiasmo e dedizione.
+            </p>
+            <a href="curriculum.pdf" class="btn" target="_blank">Scarica il mio CV</a>
+        </div>
+
+        <!-- Competenze Tecniche -->
+        <div class="card">
+            <h2>Competenze Tecniche</h2>
+            <div class="skills">
+                <span class="skill-tag">C / C++</span>
+                <span class="skill-tag">Java / Springboot</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Swift (iOS/watchOS)</span>
+                <span class="skill-tag">SQL / PostgreSQL</span>
+                <span class="skill-tag">CloudKit / AWS</span>
+                <span class="skill-tag">Linux / Unix</span>
+                <span class="skill-tag">Integrazione API REST</span>
+                <span class="skill-tag">Cisco CCNA</span>
+                <span class="skill-tag">Cisco DevNet</span>
+                <span class="skill-tag">UML</span>
+            </div>
+        </div>
+
+        <!-- Progetti -->
+        <div class="card">
+            <h2>Progetti In Evidenza</h2>
+            
+            <div>
+                <h3 style="color: var(--primary); margin: 0 0 5px 0;">App iOS per l'apprendimento collaborativo</h3>
+                <p class="subtitle" style="margin: 0 0 10px 0; color: #64748b; font-style: italic;">Progetto di Tesi di Laurea</p>
+                <p style="color: #475569;">Sviluppo di un'applicazione in ambiente iOS dedicata all'apprendimento collaborativo, con un forte focus sull'esperienza utente (QoE) e funzionalità avanzate per il supporto accademico. L'applicazione è dotata di barra di ricerca, riconoscimento ottico dei caratteri (OCR) per l'estrazione del testo dalle immagini e integrazione con database in cloud (CloudKit) per la sincronizzazione e gestione sicura dei dati.</p>
+                
+                <a href="https://github.com/deviljin95/Stratum" class="btn btn-github" target="_blank">Visualizza codice su GitHub</a>
+            </div>
+        </div>
+
+        <!-- Formazione -->
+        <div class="card">
+            <h2>Formazione ed Esperienze</h2>
+            <div class="grid">
+                <div class="item">
+                    <h3>Laurea Triennale in Informatica</h3>
+                    <p class="subtitle">Università degli Studi di Napoli Federico II | Luglio 2026</p>
+                    <p>Fondamenti solidi in Algoritmi, Strutture Dati, Basi di Dati, Ingegneria del Software, Reti di Calcolatori e Sistemi Operativi.</p>
+                </div>
+                
+                <div class="item">
+                    <h3>Cisco Academy - DTLab Networking Bootcamp</h3>
+                    <p class="subtitle">Università Federico II & Cisco | Mar 2021 - Lug 2021</p>
+                    <p><strong>Cisco Certified DevNet Associate</strong>. Focus su Python, automazione dell'infrastruttura di rete, sicurezza cloud e richieste API REST.</p>
+                </div>
+
+                <div class="item">
+                    <h3>Apple Developer Academy</h3>
+                    <p class="subtitle">Università Federico II & Apple | Ott 2019 - Giu 2020</p>
+                    <p>Sviluppo avanzato in Swift, prototipazione rapida, design pattern per applicazioni distribuite e Business Planning.</p>
+                </div>
+                
+                <div class="item">
+                    <h3>Diploma Perito Elettronica e Telecomunicazioni</h3>
+                    <p class="subtitle">ITI Antonio Pacinotti</p>
+                    <p>Basi solide nel campo dell'elettronica, dell'impiantistica e delle tecnologie di comunicazione.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contatti -->
+        <div class="card contact-info">
+            <h2>Contatti</h2>
+            <p><strong>Email:</strong> <a href="mailto:gianlucadm55@gmail.com">gianlucadm55@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/giovanni-luca-di-maio-bb84431b0" target="_blank">linkedin.com/in/giovanni-luca-di-maio</a></p>
+            <p><strong>Sede:</strong> Boscotrecase (NA), Italia</p>
+        </div>
+    </div>
+</body>
+</html>
