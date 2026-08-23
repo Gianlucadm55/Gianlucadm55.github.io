@@ -3,217 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Giovanni Luca Di Maio</title>
+    <title>Giovanni Luca Di Maio | Software Developer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        :root { 
-            --primary: #1e3a8a; 
-            --secondary: #3b82f6; 
-            --bg: #f8fafc; 
-            --text: #334155; 
-            --card-bg: #ffffff;
+        /* CSS Reset e Variabili */
+        :root {
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
         }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
-            line-height: 1.6; 
-            margin: 0; 
-            background-color: var(--bg); 
-            color: var(--text); 
-        }
-        header { 
-            background: var(--primary); 
-            color: white; 
-            text-align: center; 
-            padding: 4rem 1rem 5rem 1rem; 
-        }
-        header h1 { 
-            margin: 0; 
-            font-size: 2.8rem; 
-            font-weight: 700;
-        }
-        header p { 
-            font-size: 1.2rem; 
-            opacity: 0.9; 
-            margin-top: 10px; 
-            font-weight: 300;
-        }
-        .container { 
-            max-width: 900px; 
-            margin: -40px auto 40px; 
-            padding: 0 20px; 
-            position: relative; 
-        }
-        .card { 
-            background: var(--card-bg); 
-            padding: 35px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
-            margin-bottom: 30px; 
-        }
-        h2 { 
-            color: var(--primary); 
-            border-bottom: 2px solid #e2e8f0; 
-            padding-bottom: 12px; 
-            margin-top: 0; 
-            font-size: 1.8rem;
-        }
-        .btn { 
-            display: inline-block; 
-            background: var(--secondary); 
-            color: white; 
-            padding: 12px 28px; 
-            text-decoration: none; 
-            border-radius: 6px; 
-            font-weight: 600; 
-            transition: background 0.3s ease; 
-        }
-        .btn:hover { 
-            background: #2563eb; 
-        }
-        .btn-github {
-            background: #24292e;
-            padding: 8px 18px;
-            font-size: 0.95em;
-            margin-top: 15px;
-        }
-        .btn-github:hover {
-            background: #000000;
-        }
-        .grid { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 25px; 
-        }
-        @media (min-width: 768px) {
-            .grid { grid-template-columns: 1fr 1fr; }
-        }
-        .item h3 { 
-            margin: 0 0 5px 0; 
-            color: var(--primary); 
-            font-size: 1.2rem;
-        }
-        .item p.subtitle { 
-            margin: 0 0 10px 0; 
-            font-style: italic; 
-            color: #64748b; 
-            font-size: 0.95em; 
-        }
-        .item p {
+
+        * {
             margin: 0;
-            color: #475569;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .skills { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 12px; 
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
         }
-        .skill-tag { 
-            background: #e0f2fe; 
-            color: #0369a1; 
-            padding: 6px 14px; 
-            border-radius: 20px; 
-            font-size: 0.95em; 
-            font-weight: 500; 
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: color 0.3s;
         }
-        .contact-info p {
-            font-size: 1.1em;
-            margin-bottom: 10px;
+
+        a:hover {
+            color: var(--accent-hover);
         }
-        .contact-info a { 
-            color: var(--secondary); 
-            text-decoration: none; 
-            font-weight: 500;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .contact-info a:hover { 
-            text-decoration: underline; 
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .social-links a {
+            font-size: 1.2rem;
+            margin-left: 20px;
+            color: var(--text-main);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Education & Certifications Section */
+        .education {
+            padding: 60px 0;
+            background-color: rgba(30, 41, 59, 0.3);
+            border-top: 1px solid var(--surface-color);
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .edu-card {
+            background-color: var(--surface-color);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .edu-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .edu-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .edu-details {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        
+        .edu-details ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .edu-details li {
+            margin-bottom: 5px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--surface-color);
+            border-bottom: 1px solid var(--surface-color);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background-color: var(--surface-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--surface-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-icon {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack span {
+            font-size: 0.8rem;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--surface-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .btn-outline { margin-left: 0; margin-top: 15px; display: block; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <!-- Foto Profilo -->
-        <img src="foto-profilo.jpg" alt="Giovanni Luca Di Maio" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid white; margin-bottom: 15px;">
-        
-        <h1>Giovanni Luca Di Maio</h1>
-        <p>Sviluppatore Software & Infrastrutture di Rete</p>
-    </header>
-    
+
     <div class="container">
-        <!-- Presentazione -->
-        <div class="card" style="text-align: center;">
-            <p style="font-size: 1.15em; max-width: 800px; margin: 0 auto 25px; color: #475569;">
-                Neolaureato in Informatica con un percorso accademico arricchito da esperienze pratiche d'eccellenza presso la Apple Developer Academy e il Cisco DTLab Networking Bootcamp. Ho sviluppato solide competenze trasversali che uniscono lo sviluppo software alle infrastrutture di rete. Spinto da una naturale curiosità e fortemente orientato al continuous learning, desidero inserirmi in un contesto stimolante dove poter affrontare sfide tecnologiche complesse e contribuire attivamente alla crescita del team con entusiasmo e dedizione.
-            </p>
-            <a href="curriculum.pdf" class="btn" target="_blank">Scarica il mio CV</a>
-        </div>
-
-        <!-- Competenze Tecniche -->
-        <div class="card">
-            <h2>Competenze Tecniche</h2>
-            <div class="skills">
-                <span class="skill-tag">C / C++</span>
-                <span class="skill-tag">Java / Springboot</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Swift (iOS/watchOS)</span>
-                <span class="skill-tag">SQL / PostgreSQL</span>
-                <span class="skill-tag">CloudKit / AWS</span>
-                <span class="skill-tag">Linux / Unix</span>
-                <span class="skill-tag">Integrazione API REST</span>
-                <span class="skill-tag">Cisco CCNA</span>
-                <span class="skill-tag">Cisco DevNet</span>
-                <span class="skill-tag">UML</span>
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">GL.</div>
+            <div class="social-links">
+                <a href="https://github.com/Gianlucadm55" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/giovanni-luca-di-maio-bb84431b0" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:gianlucadm55@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
-        </div>
+        </nav>
 
-        <!-- Progetti -->
-        <div class="card">
-            <h2>Progetti In Evidenza</h2>
-            
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Ciao, sono <span>Giovanni Luca Di Maio</span></h1>
+            <p>Neolaureato in Informatica con un percorso accademico arricchito da esperienze pratiche d'eccellenza presso la Apple Developer Academy e il Cisco DTLab Networking Bootcamp. Grazie a queste tappe, ho sviluppato solide competenze trasversali che uniscono lo sviluppo software alle infrastrutture di rete. Spinto da una naturale curiosità e fortemente orientato al continuous learning, desidero inserirmi in un contesto stimolante dove poter affrontare sfide tecnologiche complesse, ampliare il mio bagaglio di competenze e contribuire attivamente alla crescita del team con entusiasmo e dedizione.</p>
             <div>
-                <h3 style="color: var(--primary); margin: 0 0 5px 0;">App iOS per l'apprendimento collaborativo</h3>
-                <p class="subtitle" style="margin: 0 0 10px 0; color: #64748b; font-style: italic;">Progetto di Tesi di Laurea</p>
-                <p style="color: #475569;">Sviluppo di un'applicazione in ambiente iOS dedicata all'apprendimento collaborativo, con un forte focus sull'esperienza utente (QoE) e funzionalità avanzate per il supporto accademico. L'applicazione è dotata di barra di ricerca, riconoscimento ottico dei caratteri (OCR) per l'estrazione del testo dalle immagini e integrazione con database in cloud (CloudKit) per la sincronizzazione e gestione sicura dei dati.</p>
-                
-                <a href="https://github.com/deviljin95/Stratum" class="btn btn-github" target="_blank">Visualizza codice su GitHub</a>
+                <a href="#projects" class="btn">Esplora i Progetti</a>
+                <a href="curriculum.pdf" target="_blank" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Scarica CV</a>
             </div>
-        </div>
+        </section>
 
-        <!-- Formazione -->
-        <div class="card">
-            <h2>Formazione ed Esperienze</h2>
-            <div class="grid">
-                <div class="item">
-                    <h3>Laurea Triennale in Informatica</h3>
-                    <p class="subtitle">Università degli Studi di Napoli Federico II | Luglio 2026</p>
-                    <p>Fondamenti solidi in Algoritmi, Strutture Dati, Basi di Dati, Ingegneria del Software, Reti di Calcolatori e Sistemi Operativi.</p>
-                </div>
+        <!-- Education & Certifications -->
+        <section class="education">
+            <h2 class="section-title">Formazione & Certificazioni</h2>
+            <div class="edu-grid">
                 
-                <div class="item">
-                    <h3>Cisco Academy - DTLab Networking Bootcamp</h3>
-                    <p class="subtitle">Università Federico II & Cisco | Mar 2021 - Lug 2021</p>
-                    <p><strong>Cisco Certified DevNet Associate</strong>. Focus su Python, automazione dell'infrastruttura di rete, sicurezza cloud e richieste API REST.</p>
+                <div class="edu-card">
+                    <div class="edu-date">Luglio 2026</div>
+                    <h3 class="edu-title">Laurea Triennale in Informatica</h3>
+                    <div class="edu-subtitle">Università degli Studi di Napoli Federico II</div>
+                    <div class="edu-details">
+                        Tesi: Sviluppo di un'app iOS per l'apprendimento collaborativo. <br><br>
+                        Competenze acquisite in: Sviluppo Software (C, C++, Java), Sistemi Operativi, Ingegneria del Software (Spring Boot, AWS, Android), Basi di Dati (SQL, PostgreSQL) e Reti di Calcolatori.
+                    </div>
                 </div>
 
-                <div class="item">
-                    <h3>Apple Developer Academy</h3>
-                    <p class="subtitle">Università Federico II & Apple | Ott 2019 - Giu 2020</p>
-                    <p>Sviluppo avanzato in Swift, prototipazione rapida, design pattern per applicazioni distribuite e Business Planning.</p>
+                <div class="edu-card">
+                    <div class="edu-date">2019 - 2020</div>
+                    <h3 class="edu-title">Apple Developer Academy</h3>
+                    <div class="edu-subtitle">Università Federico II in partnership con Apple</div>
+                    <div class="edu-details">
+                        Sviluppo avanzato per ecosistema Apple (Swift, iOS, WatchOS). Focus su Design Patterns, Prototipazione Rapida, Basi di Dati (CloudKit) e metodologie orientate alla Quality of Experience (QoE).
+                    </div>
                 </div>
-                
-                <div class="item">
-                    <h3>Diploma Perito Elettronica e Telecomunicazioni</h3>
-                    <p class="subtitle">ITI Antonio Pacinotti</p>
-                    <p>Basi solide nel campo dell'elettronica, dell'impiantistica e delle tecnologie di comunicazione.</p>
+
+                <div class="edu-card">
+                    <div class="edu-date">2021</div>
+                    <h3 class="edu-title">Cisco DTLab Networking Bootcamp</h3>
+                    <div class="edu-subtitle">Certificazioni Cisco Academy</div>
+                    <div class="edu-details">
+                        <ul>
+                            <li><strong>Cisco Certified DevNet Associate:</strong> Sviluppo software, API, sicurezza applicativa e automazione su piattaforme Cisco.</li>
+                            <li><strong>CCNA 1 & 2:</strong> Routing, Switching, implementazione VLAN, NAT, DHCP, IPv4/IPv6.</li>
+                            <li><strong>Cybersecurity Essentials.</strong></li>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
-        </div>
+        </section>
 
-        <!-- Contatti -->
-        <div class="card contact-info">
-            <h2>Contatti</h2>
-            <p><strong>Email:</strong> <a href="mailto:gianlucadm55@gmail.com">gianlucadm55@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/giovanni-luca-di-maio-bb84431b0" target="_blank">linkedin.com/in/giovanni-luca-di-maio</a></p>
-            <p><strong>Sede:</strong> Boscotrecase (NA), Italia</p>
-        </div>
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2 class="section-title">Competenze Tecniche</h2>
+            <div class="skill-tags">
+                <div class="skill-tag">C / C++</div>
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">Swift & iOS</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Spring Boot</div>
+                <div class="skill-tag">Android</div>
+                <div class="skill-tag">Amazon Web Services (AWS)</div>
+                <div class="skill-tag">Cisco Networking (CCNA / DevNet)</div>
+                <div class="skill-tag">SQL & PostgreSQL</div>
+                <div class="skill-tag">Git & GitHub</div>
+                <div class="skill-tag">Linux / Unix</div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2 class="section-title">Il Mio Portfolio</h2>
+            <div class="projects-grid">
+
+                <!-- NaTour21 -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-route"></i></div>
+                    <h3 class="project-title">NaTour21</h3>
+                    <p class="project-desc">Sistema informativo completo basato su architettura MVC. Un'app Android per la condivisione di percorsi turistici connessa a un backend RESTful in Spring Boot ospitato su AWS (EC2, RDS, Cognito, S3).</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>Android</span>
+                        <span>Spring Boot</span>
+                        <span>AWS</span>
+                    </div>
+                    <!-- INSERIRE LINK REALE QUI -->
+                    <a href="https://github.com/Gianlucadm55/NaTour_ProgettoDiIngegneriaDelSoftware" target="_blank" class="project-link">
+                        Vedi su GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- LASD Data Structures -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 class="project-title">LASD Data Structures</h3>
+                    <p class="project-desc">Libreria C++ Object-Oriented ispirata alla STL. Implementazione da zero di vettori, liste, stack, code, alberi binari di ricerca (BST) e tabelle hash, con gestione rigorosa della memoria dinamica e dei template.</p>
+                    <div class="tech-stack">
+                        <span>C++</span>
+                        <span>OOP</span>
+                        <span>Data Structures</span>
+                        <span>Algorithms</span>
+                    </div>
+                    <a href="https://github.com/Gianlucadm55/Algoritmi-e-Strutture-Dati" target="_blank" class="project-link">
+                        Vedi su GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Stratum iOS -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fab fa-apple"></i></div>
+                    <h3 class="project-title">Stratum iOS App</h3>
+                    <p class="project-desc">Applicazione sviluppata durante l'Apple Developer Academy per ottimizzare lo studio universitario collaborativo. Integra funzionalità di riconoscimento del testo (OCR) e architettura CloudKit per la persistenza.</p>
+                    <div class="tech-stack">
+                        <span>Swift</span>
+                        <span>UIKit</span>
+                        <span>CloudKit</span>
+                        <span>Vision Framework</span>
+                    </div>
+                    <!-- INSERIRE LINK REALE QUI -->
+                    <a href="https://github.com/Gianlucadm55/Stratum" target="_blank" class="project-link">
+                        Vedi su GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Botnet C -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-server"></i></div>
+                    <h3 class="project-title">C-Botnet Simulator</h3>
+                    <p class="project-desc">Progetto di Sistemi Operativi. Architettura client-server multi-thread scritta in C puro. Simula una botnet per l'estrazione e il salvataggio remoto di informazioni di sistema, sfruttando la comunicazione su Socket TCP.</p>
+                    <div class="tech-stack">
+                        <span>C</span>
+                        <span>TCP Sockets</span>
+                        <span>Multi-threading</span>
+                        <span>Linux</span>
+                    </div>
+                    <a href="https://github.com/Gianlucadm55/Botnet" target="_blank" class="project-link">
+                        Vedi su GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Wiki Java -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-book"></i></div>
+                    <h3 class="project-title">Wiki Management System</h3>
+                    <p class="project-desc">Software gestionale in Java sviluppato per amministrare articoli wiki. Presenta un'architettura divisa per moduli, connettore JDBC personalizzato e salvataggio dei dati su database relazionale.</p>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>SQL</span>
+                        <span>JDBC</span>
+                        <span>OOP</span>
+                    </div>
+                    <a href="https://github.com/Gianlucadm55/Wiki" target="_blank" class="project-link">
+                        Vedi su GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Giovanni Luca Di Maio. Creato con passione e codice.</p>
+        </footer>
     </div>
+
 </body>
 </html>
